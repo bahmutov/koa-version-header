@@ -23,6 +23,14 @@ if (exists(packageFilename)) {
   la(is.unemptyString(name), 'invalid service name', name)
 }
 
+// allow overwriting via environment variables
+if (process.env.SERVICE_NAME) {
+  name = process.env.SERVICE_NAME
+}
+if (process.env.SERVICE_VERSION) {
+  version = process.env.SERVICE_VERSION
+}
+
 function * setVersionResponse (next) {
   yield next
   this.set('X-Service-Name', name)

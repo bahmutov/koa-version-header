@@ -43,6 +43,17 @@ X-Service-Version: 0.0.0-semantic-release
 ok
 ```
 
+## Name and version
+
+The name and version are read from the `package.json` file if it exists in the current
+working folder. You can overwrite / set different values using environment variables
+
+```sh
+SERVICE_NAME=my-service SERVICE_VERSION=1.0.0 node server.js 
+X-Service-Name: my-service
+X-Service-Version: 1.0.0
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2016
