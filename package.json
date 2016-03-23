@@ -39,9 +39,9 @@
     "url": "https://github.com/bahmutov/koa-version-header.git"
   },
   "scripts": {
-    "format": "standard-format -w index.js test/*.js",
+    "format": "standard-format -w index.js test/*.js demo/*.js",
     "issues": "git-issues",
-    "lint": "standard --verbose index.js test/*.js",
+    "lint": "standard --verbose index.js test/*.js demo/*.js",
     "pretest": "npm run format && npm run lint",
     "secure": "nsp check",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
@@ -50,7 +50,8 @@
     "unit2": "NODE_PATH=.. SERVICE_NAME=my-service SERVICE_VERSION=1.0.1 mocha test/env-spec.js",
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "e2e": "NODE_PATH=.. node test/server.js"
+    "e2e": "NODE_PATH=.. node test/server.js",
+    "demo": "NODE_PATH=.. node demo/ping.js"
   },
   "devDependencies": {
     "axios": "0.9.1",

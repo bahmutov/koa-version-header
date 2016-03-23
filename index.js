@@ -37,7 +37,14 @@ function * setVersionResponse (next) {
   this.set('X-Service-Version', version)
 }
 
-function configureMiddleware () {
+function configureMiddleware (options) {
+  options = options || {}
+  if (is.unemptyString(options.name)) {
+    name = options.name
+  }
+  if (is.unemptyString(options.version)) {
+    version = options.version
+  }
   return setVersionResponse
 }
 

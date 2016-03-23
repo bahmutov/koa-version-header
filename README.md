@@ -54,6 +54,18 @@ X-Service-Name: my-service
 X-Service-Version: 1.0.0
 ```
 
+You can also force name and version by specifying them as options to the middleware
+
+```js
+const koa = require('koa')
+const serviceVersion = require('koa-version-header')
+const app = koa()
+app.use(serviceVersion({
+  name: 'my-service',
+  version: '2.3.1'
+}))
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2016
