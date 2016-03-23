@@ -39,25 +39,27 @@
     "url": "https://github.com/bahmutov/koa-version-header.git"
   },
   "scripts": {
-    "format": "standard-format -w index.js",
+    "format": "standard-format -w index.js test/*.js",
     "issues": "git-issues",
-    "lint": "standard --verbose index.js",
+    "lint": "standard --verbose index.js test/*.js",
     "pretest": "npm run format && npm run lint",
     "secure": "nsp check",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha index.js",
     "commit": "commit-wizard",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "e2e": "NODE_PATH=.. node test/server.js"
   },
   "devDependencies": {
     "git-issues": "1.2.0",
+    "koa": "1.2.0",
     "mocha": "2.4.5",
     "nsp": "2.2.1",
     "pre-git": "3.7.1",
+    "semantic-release": "^4.3.5",
     "standard": "6.0.8",
-    "standard-format": "2.1.1",
-    "semantic-release": "^4.3.5"
+    "standard-format": "2.1.1"
   },
   "dependencies": {
     "check-more-types": "2.12.1",
