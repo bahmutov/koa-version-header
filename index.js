@@ -10,11 +10,16 @@ const exists = require('fs').existsSync
 var name = 'unknown'
 var version = 'unknown'
 
+function isSemanticRelease (ver) {
+  return ver === '0.0.0-semantic-release'
+}
+
 if (exists(packageFilename)) {
   const pkg = require(packageFilename)
   name = pkg.name
   version = pkg.version
-  la(is.semver(version), 'service version is not semver', version)
+  la(is.semver(version) || isSemanticRelease(version),
+    'service version is not semver', version)
   la(is.unemptyString(name), 'invalid service name', name)
 }
 
