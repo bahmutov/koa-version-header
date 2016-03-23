@@ -61,6 +61,7 @@
     "nsp": "2.2.1",
     "pre-git": "3.7.1",
     "semantic-release": "^4.3.5",
+    "semver": "5.1.0",
     "standard": "6.0.8",
     "standard-format": "2.1.1"
   },
