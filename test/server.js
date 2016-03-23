@@ -2,7 +2,6 @@
 
 const koa = require('koa')
 const serviceVersion = require('koa-version-header')
-
 const app = koa()
 app.use(serviceVersion())
 app.use(function * () {

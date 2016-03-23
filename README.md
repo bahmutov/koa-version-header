@@ -4,9 +4,44 @@
 
 [![NPM][npm-icon] ][npm-url]
 
-[![Build status][ci-image] ][ci-url]
-[![semantic-release][semantic-image] ][semantic-url]
-[![js-standard-style][standard-image]](http://standardjs.com/)
+[![Build status][ci-image]][ci-url]
+[![semantic-release][semantic-image]][semantic-url]
+[![standard style][standard-image]][standard-url]
+
+## Install
+
+    npm install --save koa-version-header
+
+## Use
+
+Add to [koa](http://koajs.com/) middleware list
+
+```js
+const koa = require('koa')
+const serviceVersion = require('koa-version-header')
+const app = koa()
+app.use(serviceVersion())
+app.use(function * () {
+  this.body = 'ok'
+})
+app.listen(3000)
+```
+
+Any request will get a few extra headers `X-Service-...` that you can use to validate
+the expected / tested services
+
+```sh
+$ http localhost:3000
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 2
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 23 Mar 2016 19:37:26 GMT
+X-Service-Name: koa-version-header
+X-Service-Version: 0.0.0-semantic-release
+
+ok
+```
 
 ### Small print
 
@@ -55,3 +90,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
+[standard-url]: http://standardjs.com/

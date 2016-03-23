@@ -46,12 +46,13 @@
     "secure": "nsp check",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
-    "unit": "mocha index.js",
+    "unit": "NODE_PATH=.. mocha test/spec.js",
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "e2e": "NODE_PATH=.. node test/server.js"
   },
   "devDependencies": {
+    "axios": "0.9.1",
     "git-issues": "1.2.0",
     "koa": "1.2.0",
     "mocha": "2.4.5",
