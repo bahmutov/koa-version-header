@@ -51,7 +51,8 @@
     "commit": "commit-wizard",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "e2e": "NODE_PATH=.. node test/server.js",
-    "demo": "NODE_PATH=.. node demo/ping.js"
+    "demo": "NODE_PATH=.. node demo/ping.js",
+    "intercept": "NODE_PATH=.. node demo/intercept.js"
   },
   "devDependencies": {
     "axios": "0.9.1",
