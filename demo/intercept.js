@@ -65,9 +65,9 @@ request(url, function (error, response, body) {
 //   })
 //   .then(() => server.close())
 //   .catch(console.error)
-  /*
-  ping server at port 3000
-  got response from test-service@2.3.1
-  is this service version acceptable? We need ~2.3.0
-  satisfies? true
-  */
+/*
+ping server at port 3000
+got response from test-service@2.3.1
+is this service version acceptable? We need ~2.3.0
+satisfies? true
+*/
